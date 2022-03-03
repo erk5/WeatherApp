@@ -2,7 +2,7 @@ package erk5.github.io.weatherapp.android
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import erk5.github.io.weatherapp.Greeting
+import erk5.github.io.weatherapp.WeatherRepository
 import android.widget.TextView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,8 +19,10 @@ class MainActivity : AppCompatActivity() {
 
         val tv: TextView = findViewById(R.id.text_view)
         scope.launch {
-            tv.text = Greeting().greeting()
+        WeatherRepository().getWeather { tv.text = it.name }
         }
+
+
     }
 
     override fun onDestroy() {

@@ -16,7 +16,9 @@ object NetworkResolver {
             level = LogLevel.HEADERS
         }
         install(JsonFeature) {
-            serializer = KotlinxSerializer()
+            serializer = KotlinxSerializer(kotlinx.serialization.json.Json {
+                ignoreUnknownKeys = true
+            })
         }
     }
 }

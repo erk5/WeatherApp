@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    kotlin("plugin.serialization") version "1.4.10"
 }
 
 version = "1.0"
@@ -28,7 +29,6 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:1.6.7")
                 implementation("io.ktor:ktor-client-cio:1.6.7")
                 implementation("io.ktor:ktor-client-logging:1.6.7")
-                implementation("io.ktor:ktor-client-json:1.6.7")
                 implementation("io.ktor:ktor-client-serialization:1.6.7")
             }
         }
